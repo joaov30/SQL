@@ -100,3 +100,31 @@ FROM Person.Person as p
 WHERE LastName LIKE 'P%'
 
 -------------------------------------------
+
+--Desafio 13
+SELECT COUNT(DISTINCT a.City) AS City
+FROM Person.Address AS a
+
+-------------------------------------------
+
+--Desafio 14
+SELECT DISTINCT a.City AS City
+FROM Person.Address AS a
+
+-------------------------------------------
+
+--Desafio 15
+SELECT COUNT(Color) as color
+FROM Production.Product 
+WHERE Color LIKE 'Red' 
+AND ListPrice BETWEEN '500' AND '1000';
+
+-------------------------------------------
+
+--Desafio 16
+
+
+-------------------------------------------
+
+
+
