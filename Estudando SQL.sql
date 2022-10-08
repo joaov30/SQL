@@ -38,6 +38,17 @@ FROM Sales.SalesOrderDetail
 
 */
 
+SELECT *
+FROM Sales.SalesOrderDetail
+
+SELECT s.SpecialOfferID, SUM(UnitPrice) as Soma
+from Sales.SalesOrderDetail as s
+GROUP BY SpecialOfferID
+
+
+
+-------------------------------------------LEVEL 1-------------------------------------------
+
 --Desafio 1
 SELECT *
 FROM Production.Product
@@ -114,6 +125,13 @@ SELECT COUNT(p.Name) AS Name
 FROM Production.Product as p
 WHERE Name LIKE '%road%';
 -------------------------------------------
+
+-------------------------------------------LEVEL 2-------------------------------------------
+
+
+
+
+
 
 
 
