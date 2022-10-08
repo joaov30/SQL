@@ -18,7 +18,11 @@ ORDER BY HireDate asc
 
 SELECT *
 FROM Person.Person
-WHERE BusinessEntityID in (2,7,24)
+WHERE BusinessEntityID in (52,17,24)
+
+SELECT *
+FROM Person.Person
+WHERE FirstName LIKE '%ke%';
 
 */
 
