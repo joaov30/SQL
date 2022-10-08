@@ -36,17 +36,20 @@ FROM Sales.SalesOrderDetail
 SELECT AVG(LineTotal) as Total
 FROM Sales.SalesOrderDetail
 
-*/
-
-SELECT *
-FROM Sales.SalesOrderDetail
 
 SELECT s.SpecialOfferID, SUM(UnitPrice) as Soma
 from Sales.SalesOrderDetail as s
 GROUP BY SpecialOfferID
 
+SELECT ProductID, COUNT(ProductID) as Contagem
+FROM Sales.SalesOrderDetail
+GROUP BY ProductID
 
+*/
 
+SELECT p.FirstName, COUNT(FirstName) as Contagem
+FROM Person.Person AS p
+GROUP BY FirstName
 -------------------------------------------LEVEL 1-------------------------------------------
 
 --Desafio 1
