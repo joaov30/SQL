@@ -89,9 +89,14 @@ ORDER BY ProductID ASC;
 -------------------------------------------
 
 --Desafio 11
-
+SELECT COUNT(p.ListPrice) as listaPreco
+FROM Production.Product as p
+WHERE ListPrice > '1500'
 
 -------------------------------------------
+--Desafio 12
+SELECT COUNT(p.LastName) as LastName
+FROM Person.Person as p
+WHERE LastName LIKE 'P%'
 
-
-
+-------------------------------------------
