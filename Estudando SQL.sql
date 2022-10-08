@@ -24,9 +24,19 @@ SELECT *
 FROM Person.Person
 WHERE FirstName LIKE '%ke%';
 
+SELECT SUM(LineTotal) as Total
+FROM Sales.SalesOrderDetail
+
+SELECT MAX(LineTotal) as Total
+FROM Sales.SalesOrderDetail
+
+SELECT MIN(LineTotal) as Total
+FROM Sales.SalesOrderDetail
+
+SELECT AVG(LineTotal) as Total
+FROM Sales.SalesOrderDetail
+
 */
-
-
 
 --Desafio 1
 SELECT *
