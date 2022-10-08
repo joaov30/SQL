@@ -21,7 +21,7 @@ FROM Person.Person
 WHERE BusinessEntityID in (2,7,24)
 
 */
-USE AdventureWorks2017;
+
 
 --Desafio 1
 SELECT *
