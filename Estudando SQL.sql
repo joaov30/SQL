@@ -45,11 +45,13 @@ SELECT ProductID, COUNT(ProductID) as Contagem
 FROM Sales.SalesOrderDetail
 GROUP BY ProductID
 
-*/
-
 SELECT p.FirstName, COUNT(FirstName) as Contagem
 FROM Person.Person AS p
 GROUP BY FirstName
+
+*/
+
+
 -------------------------------------------LEVEL 1-------------------------------------------
 
 --Desafio 1
@@ -130,6 +132,34 @@ WHERE Name LIKE '%road%';
 -------------------------------------------
 
 -------------------------------------------LEVEL 2-------------------------------------------
+
+--Desafio 17
+SELECT middlename, COUNT(p.MiddleName) AS Calculo
+FROM Person.Person AS p
+GROUP BY MiddleName
+-------------------------------------------
+
+--Desafio 18
+SELECT ProductID, AVG(p.OrderQty) as QuantidadeMedia
+FROM Sales.SalesOrderDetail as p
+GROUP BY ProductID
+-------------------------------------------
+
+--Desafio 19
+SELECT TOP 10 s.ProductID, SUM(s.LineTotal) AS VendaTotal
+FROM Sales.SalesOrderDetail AS s
+GROUP BY ProductID
+ORDER BY SUM(LineTotal)DESC;
+-------------------------------------------
+
+--Desafio 20
+SELECT p.productid, COUNT(p.productid) as Contagem, AVG(orderqty) AS MEDIA
+FROM Production.WorkOrder AS P
+GROUP BY ProductID
+
+
+
+-------------------------------------------
 
 
 
