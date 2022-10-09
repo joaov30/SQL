@@ -49,8 +49,18 @@ SELECT p.FirstName, COUNT(FirstName) as Contagem
 FROM Person.Person AS p
 GROUP BY FirstName
 
-*/
+SELECT s.ProductID, SUM(LineTotal) as TotalVendas
+FROM Sales.SalesOrderDetail as s
+GROUP BY ProductID
+HAVING SUM(LineTotal) BETWEEN 162000 and 500000;
 
+SELECT p.firstname, COUNT(firstname) AS Quantidade
+FROM Person.Person as p
+WHERE p.Title = 'MR.'
+GROUP BY FirstName
+HAVING COUNT(firstname) > 10
+
+*/
 
 -------------------------------------------LEVEL 1-------------------------------------------
 
@@ -156,6 +166,10 @@ ORDER BY SUM(LineTotal)DESC;
 SELECT p.productid, COUNT(p.productid) as Contagem, AVG(orderqty) AS MEDIA
 FROM Production.WorkOrder AS P
 GROUP BY ProductID
+-------------------------------------------
+
+--Desafio 21
+
 
 
 
