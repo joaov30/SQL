@@ -1,13 +1,14 @@
-/*SELECT *
+---------TESTES---------
+SELECT *
 FROM person.person
 WHERE LastName = 'Miller' AND FirstName = 'anna';
-*/
 
-/*SELECT * from Production.Product
+
+SELECT * from Production.Product
 WHERE ListPrice > 1500 and ListPrice < 3000
-*/
 
-/*SELECT *
+
+SELECT *
 FROM Production.Product
 WHERE Color <>  'Silver';
 
@@ -59,8 +60,8 @@ FROM Person.Person as p
 WHERE p.Title = 'MR.'
 GROUP BY FirstName
 HAVING COUNT(firstname) > 10
+-------------------------------------------END-----------------------------------------------
 
-*/
 
 -------------------------------------------LEVEL 1-------------------------------------------
 
@@ -169,6 +170,14 @@ GROUP BY ProductID
 -------------------------------------------
 
 --Desafio 21
+SELECT *
+FROM Person.Address
+
+SELECT a.StateProvinceID, COUNT(a.StateProvinceID) as SomaTotal
+FROM Person.Address AS a
+GROUP BY StateProvinceID
+HAVING COUNT(StateProvinceID) > 1000
+
 
 
 
