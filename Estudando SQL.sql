@@ -170,20 +170,22 @@ GROUP BY ProductID
 -------------------------------------------
 
 --Desafio 21
-SELECT *
-FROM Person.Address
-
 SELECT a.StateProvinceID, COUNT(a.StateProvinceID) as SomaTotal
 FROM Person.Address AS a
 GROUP BY StateProvinceID
 HAVING COUNT(StateProvinceID) > 1000
-
-
-
-
-
 -------------------------------------------
 
+--Desafio 22
+SELECT *
+FROM Sales.SalesOrderDetail
+
+SELECT s.ProductID, AVG(s.LineTotal) AS media
+FROM Sales.SalesOrderDetail AS s
+GROUP BY ProductID
+HAVING AVG(LineTotal) < 1000000
+
+-------------------------------------------
 
 
 
