@@ -177,13 +177,24 @@ HAVING COUNT(StateProvinceID) > 1000
 -------------------------------------------
 
 --Desafio 22
-SELECT *
-FROM Sales.SalesOrderDetail
-
 SELECT s.ProductID, AVG(s.LineTotal) AS media
 FROM Sales.SalesOrderDetail AS s
 GROUP BY ProductID
 HAVING AVG(LineTotal) < 1000000
+
+-------------------------------------------
+
+--Desafio 23, 24, 25
+SELECT p.FirstName AS 'Nome', p.LastName AS 'Sobrenome'
+FROM Person.Person AS p
+
+SELECT p.ProductNumber as 'Numero do Produto'
+FROM Production.Product as p
+
+SELECT s.unitPrice AS 'Preço Unitario'
+FROM Sales.SalesOrderDetail AS s
+
+
 
 -------------------------------------------
 
