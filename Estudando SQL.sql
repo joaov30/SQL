@@ -212,6 +212,20 @@ INNER JOIN Person.PhoneNumberType AS ph
 ON ph.PhoneNumberTypeID = pe.PhoneNumberTypeID;
 -------------------------------------------
 
+--Desafio 27
+SELECT TOP 10 *
+FROM Person.StateProvince
+
+SELECT TOP 10 *
+FROM Person.Address
+
+SELECT TOP 100 ad.AddressID, ad.City, st.StateProvinceID, st.Name
+FROM Person.Address as ad
+INNER JOIN Person.StateProvince as st
+ON st.StateProvinceID = ad.StateProvinceID
+
+-------------------------------------------
+
 
 
 
