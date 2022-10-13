@@ -193,10 +193,25 @@ FROM Production.Product as p
 
 SELECT s.unitPrice AS 'Preço Unitario'
 FROM Sales.SalesOrderDetail AS s
-
-
-
 -------------------------------------------
+
+------------------JOINS--------------------
+
+--Desafio 26
+
+SELECT *
+FROM Person.PhoneNumberType
+
+SELECT *
+FROM Person.PersonPhone
+
+
+SELECT pe.BusinessEntityID, ph.Name, ph.PhoneNumberTypeID, pe.PhoneNumber
+FROM Person.PersonPhone AS pe
+INNER JOIN Person.PhoneNumberType AS ph
+ON ph.PhoneNumberTypeID = pe.PhoneNumberTypeID;
+-------------------------------------------
+
 
 
 
