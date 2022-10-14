@@ -228,6 +228,32 @@ ON st.StateProvinceID = ad.StateProvinceID
 
 
 
+--Desafio 30
+SELECT *
+FROM Person.Address
+
+
+SELECT *
+FROM Person.StateProvince
+
+--V1 SUBQUERY
+SELECT *
+FROM Person.Address
+WHERE StateProvinceID 
+IN (SELECT StateProvinceID FROM Person.StateProvince PS
+WHERE NAME = 'Alberta')
+
+--V2 JOIN
+SELECT PP.stateProvinceID, PP.AddressLine1, PP.City, PS.name Estado
+FROM Person.Address PP
+JOIN Person.StateProvince as PS
+ON pp.StateProvinceID = ps.StateProvinceID
+WHERE PS.Name = 'Alberta'
+
+-------------------------------------------
+
+
+
 
 
 
