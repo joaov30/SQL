@@ -225,8 +225,9 @@ INNER JOIN Person.StateProvince as st
 ON st.StateProvinceID = ad.StateProvinceID
 
 -------------------------------------------
-
-
+--Desafio 28,29
+--Estão em outra Query
+-------------------------------------------
 
 --Desafio 30
 SELECT *
@@ -249,6 +250,15 @@ FROM Person.Address PP
 JOIN Person.StateProvince as PS
 ON pp.StateProvinceID = ps.StateProvinceID
 WHERE PS.Name = 'Alberta'
+
+-------------------------------------------
+
+
+-------------------------------------------LEVEL 3-------------------------------------------
+
+
+--Desafio 31
+
 
 -------------------------------------------
 
