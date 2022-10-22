@@ -258,6 +258,18 @@ WHERE PS.Name = 'Alberta'
 
 
 --Desafio 31
+--DATEPART
+SELECT * FROM
+Purchasing.PurchaseOrderDetail
+
+SELECT productID, DATEPART(month, DueDate) as Mes,  DATEPART(year, DueDate) as Ano
+FROM Purchasing.PurchaseOrderDetail
+
+
+
+
+
+
 
 
 -------------------------------------------
