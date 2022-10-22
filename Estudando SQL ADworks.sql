@@ -264,13 +264,30 @@ Purchasing.PurchaseOrderDetail
 
 SELECT productID, DATEPART(month, DueDate) as Mes,  DATEPART(year, DueDate) as Ano
 FROM Purchasing.PurchaseOrderDetail
+-------------------------------------------
 
+--Desafio 32
+--STRINGS
+SELECT *
+From person.Person
 
+SELECT firstName, CONCAT(FirstName,' ', LastName) as [Nome e Sobrenome] 
+FROM Person.Person
 
+SELECT firstName, LastName, LEN(FirstName) as [Letras Primeiro nome], LEN(LastName) as [Letras Sobrenome]
+from Person.Person
 
+SELECT firstName as Padrão, LOWER(firstName) as Minusculo, UPPER(FirstName) as Maiusculo
+FROM Person.Person
 
+SELECT firstName as Nome, SUBSTRING(firstName,1,4) as [Primeiras 4 letras]
+FROM Person.Person
 
+SELECT *
+FROM Production.ProductModel
 
+SELECT Name, REPLACE(Name, ' ', '--') as Nome
+From Production.ProductModel
 
 -------------------------------------------
 
