@@ -60,6 +60,13 @@ FROM Person.Person as p
 WHERE p.Title = 'MR.'
 GROUP BY FirstName
 HAVING COUNT(firstname) > 10
+
+
+SELECT *
+FROM Sales.CountryRegionCurrency
+
+SELECT COUNT(countryRegionCode) - COUNT(DISTINCT countryRegionCode) AS Diferença
+FROM Sales.CountryRegionCurrency
 -------------------------------------------END-----------------------------------------------
 
 
@@ -288,6 +295,15 @@ FROM Production.ProductModel
 
 SELECT Name, REPLACE(Name, ' ', '--') as Nome
 From Production.ProductModel
+
+-------------------------------------------
+
+--Desafio 33
+SELECT * 
+FROM Production.ProductListPriceHistory
+
+SELECT productID,listPrice, ROUND(listPrice, 2) as [Preço arredondado]
+FROM Production.ProductListPriceHistory
 
 -------------------------------------------
 
