@@ -67,6 +67,25 @@ FROM Sales.CountryRegionCurrency
 
 SELECT COUNT(countryRegionCode) - COUNT(DISTINCT countryRegionCode) AS Diferença
 FROM Sales.CountryRegionCurrency
+
+
+--------------------------- Operações Matematicas ---------------------------
+--Potenciação = 2 ao quadrado
+SELECT SQUARE(8) as Resultado --(numero x ele mesmo)
+
+SELECT POWER(2,3) AS RESULTADO -- 2X 2X 2X
+SELECT POWER(2,15) AS RESULTADO
+
+--Porcentagem
+SELECT 100 * 1.1 AS RESULTADO
+SELECT 100 + (100 * 0.1) AS RESULTADO
+
+SELECT 100 * 0.9 AS RESULTADO	--1/10
+SELECT 100 * 0.1 AS RESULTADO	--1/10
+SELECT 100 * 0.01 AS RESULTADO	--1/100
+
+
+
 -------------------------------------------END-----------------------------------------------
 
 
