@@ -38,6 +38,7 @@ SELECT AVG(LineTotal) as Total
 FROM Sales.SalesOrderDetail
 
 
+SELECT * FROM Sales.SalesOrderDetail
 SELECT s.SpecialOfferID, SUM(UnitPrice) as Soma
 from Sales.SalesOrderDetail as s
 GROUP BY SpecialOfferID
@@ -84,6 +85,7 @@ SELECT 100 * 0.9 AS RESULTADO	--1/10
 SELECT 100 * 0.1 AS RESULTADO	--1/10
 SELECT 100 * 0.01 AS RESULTADO	--1/100
 
+
 --ABS
 SELECT abs(100-999) AS RESULTADO -- RETORNA O NUMERO SEM O SINAL
 SELECT abs(-100) AS RESULTADO
@@ -106,6 +108,13 @@ SELECT sign(0) AS RESULTADO
 
 --SOMA
 SELECT SUM(3000 + 234154) AS RESULTADO
+
+
+SELECT *
+FROM Production.Product p
+
+
+
 
 ---------------------------------------------------------------------------------------------
 
@@ -195,9 +204,11 @@ WHERE Name LIKE '%road%';
 -------------------------------------------LEVEL 2-------------------------------------------
 
 --Desafio 17
+SELECT * FROM Person.Person
 SELECT middlename, COUNT(p.MiddleName) AS Calculo
 FROM Person.Person AS p
 GROUP BY MiddleName
+ORDER BY Calculo desc
 -------------------------------------------
 
 --Desafio 18
@@ -352,8 +363,36 @@ FROM Production.ProductListPriceHistory
 
 
 
+SELECT *
+FROM Person.Person
+select * 
+from Person.EmailAddress
+
+SELECT pp.BusinessEntityID, pp.EmailPromotion , pp.firstname, pp.lastname, pe.EmailAddress
+from Person.Person pp
+left join Person.EmailAddress pe
+on pp.BusinessEntityID = pe.BusinessEntityID
+WHERE pp.FirstName = 'Ken'AND EmailPromotion = 1
+ORDER BY BusinessEntityID asc
 
 
 
 
+SELECT * 
+FROM Person.Person pp
+LEFT JOIN Sales.PersonCreditCard pc
+on pp.BusinessEntityID = pc.BusinessEntityID
 
+
+SELECT * 
+FROM Person.Person
+
+SELECT * 
+FROM Person.EmailAddress
+
+select DISTINCT(pp.FirstName) , pp.LastName, pe.EmailAddressID,pp.EmailPromotion , pe.EmailAddress
+from Person.Person as pp
+JOIN Person.EmailAddress as pe
+on pp.BusinessEntityID = pe.BusinessEntityID
+where  pp.EmailPromotion = 2
+order by pe.EmailAddressID ASC
