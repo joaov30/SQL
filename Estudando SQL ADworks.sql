@@ -109,13 +109,6 @@ SELECT sign(0) AS RESULTADO
 --SOMA
 SELECT SUM(3000 + 234154) AS RESULTADO
 
-
-SELECT *
-FROM Production.Product p
-
-
-
-
 ---------------------------------------------------------------------------------------------
 
 
@@ -396,3 +389,55 @@ JOIN Person.EmailAddress as pe
 on pp.BusinessEntityID = pe.BusinessEntityID
 where  pp.EmailPromotion = 2
 order by pe.EmailAddressID ASC
+
+
+
+
+
+----------------------------------------------Rascunhos
+
+SELECT * 
+FROM Production.Product
+
+SELECT Name, ProductNumber, StandardCost as Valor, StandardCost * 0.5 as [Valor Com Desconto ]
+FROM Production.Product 
+Order by Valor Desc
+
+
+SELECT *
+FROM Person.Person pp
+JOIN Sales.PersonCreditCard pc
+on pp.BusinessEntityID = pc.BusinessEntityID
+where pp.Title IS NOT NULL
+order by CreditCardID asc
+
+
+SELECT * 
+FROM Sales.PersonCreditCard
+--------------------------------------
+SELECT TOP 50 *
+FROM Person.Person pp
+WHERE pp.EmailPromotion = 2 AND pp.MiddleName IS NOT NULL 
+-----------------------------------------------------------------
+
+SELECT MIN(pp.ReorderPoint) as [menor preço]
+FROM Production.Product pp
+WHERE pp.color = 'Black'
+
+SELECT * FROM Production.Product
+-----------------------------------------------------------------------------
+
+SELECT * 
+FROM Production.Product
+Where ReorderPoint IS NOT NULL
+
+SELECT SUM(ReorderPoint) as [Soma Total]
+FROM Production.Product
+Where ReorderPoint IS NOT NULL
+SELECT (202287 / 504) AS Media
+
+SELECT AVG(ReorderPoint) as Média
+FROM Production.Product
+WHERE ReorderPoint IS NOT NULL
+
+--------------------------------------------------------------------------------
