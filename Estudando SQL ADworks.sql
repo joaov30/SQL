@@ -429,11 +429,12 @@ SELECT * FROM Production.Product
 
 SELECT * 
 FROM Production.Product
-Where ReorderPoint IS NOT NULL
+Where Color IS NOT NULL
 
 SELECT SUM(ReorderPoint) as [Soma Total]
 FROM Production.Product
 Where ReorderPoint IS NOT NULL
+
 SELECT (202287 / 504) AS Media
 
 SELECT AVG(ReorderPoint) as Média
@@ -441,3 +442,4 @@ FROM Production.Product
 WHERE ReorderPoint IS NOT NULL
 
 --------------------------------------------------------------------------------
+
