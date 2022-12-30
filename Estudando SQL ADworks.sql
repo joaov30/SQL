@@ -417,7 +417,10 @@ FROM Sales.PersonCreditCard
 --------------------------------------
 SELECT TOP 50 *
 FROM Person.Person pp
-WHERE pp.EmailPromotion = 2 AND pp.MiddleName IS NOT NULL 
+WHERE pp.EmailPromotion = 2  
+AND pp.MiddleName IS NOT NULL 
+AND  pp.Title IS NOT NULL
+AND pp.Suffix IS NOT NULL
 -----------------------------------------------------------------
 
 SELECT MIN(pp.ReorderPoint) as [menor preço]
