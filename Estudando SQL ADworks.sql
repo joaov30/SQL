@@ -453,7 +453,6 @@ Where ReorderPoint IS NOT NULL
 
 --------------------------------------------------------------------------------
 
-
 SELECT *
 FROM Person.Person
 
@@ -465,7 +464,10 @@ from Person.Person pp
 join Person.EmailAddress pe
 on pp.BusinessEntityID = pe.BusinessEntityID
 where pp.MiddleName IS NOT NULL
+--------------------------------------------------------------------------------
 
 
-
-
+SELECT *
+FROM Person.Person
+where FirstName in('Ken','Jossef','Janice') and Title is not null
+order by BusinessEntityID
