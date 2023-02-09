@@ -56,11 +56,11 @@ FROM Sales.SalesOrderDetail as s
 GROUP BY ProductID
 HAVING SUM(LineTotal) BETWEEN 162000 and 500000;
 
-SELECT p.firstname, COUNT(firstname) AS Quantidade
+SELECT p.firstname, COUNT(p.firstname) AS Quantidade
 FROM Person.Person as p
 WHERE p.Title = 'MR.'
 GROUP BY FirstName
-HAVING COUNT(firstname) > 10
+HAVING COUNT(p.firstname) > 19
 
 
 SELECT *
@@ -421,6 +421,7 @@ WHERE pp.EmailPromotion = 2
 AND pp.MiddleName IS NOT NULL 
 AND  pp.Title IS NOT NULL
 AND pp.Suffix IS NOT NULL
+ORDER BY pp.BusinessEntityID DESC
 -----------------------------------------------------------------
 
 SELECT MIN(pp.ReorderPoint) as [menor preço]
@@ -444,5 +445,27 @@ SELECT AVG(ReorderPoint) as Média
 FROM Production.Product
 WHERE ReorderPoint IS NOT NULL
 
+
+
+SELECT SUM(ReorderPoint) - AVG(ReorderPoint) as [Soma Total menos a Média]
+FROM Production.Product
+Where ReorderPoint IS NOT NULL
+
 --------------------------------------------------------------------------------
+
+
+SELECT *
+FROM Person.Person
+
+SELECT *
+FROM Person.EmailAddress
+
+select pp.FirstName [PRIMEIRO NOME] , pp.MiddleName [NOME DO MEIO] , pp.LastName [SOBRENOME]
+from Person.Person pp
+join Person.EmailAddress pe
+on pp.BusinessEntityID = pe.BusinessEntityID
+where pp.MiddleName IS NOT NULL
+
+
+
 
