@@ -91,9 +91,11 @@ having sum(LineTotal) between 162000 and 500000
 select *
 from Person.Address
 
-select count(City)
+select city,count(City) Soma
 from Person.Address
-where City = 'Chicago'
+group by City
+having count(city) = 55 and City in ('Leeds','Watford','Kassel')
+
 
 
 select StateProvinceID,COUNT(StateProvinceID) Quantidade
@@ -153,9 +155,19 @@ select pa.addressID,pa.City , ps.StateProvinceID, ps.Name
 from Person.StateProvince ps
 join Person.Address pa
 on ps.StateProvinceID = pa.StateProvinceID
+-------------------------------------------------------------
 
 
 
+select *
+from Person.Person
+
+select *
+from Person.EmailAddress
+
+select pessoa.FirstName, pessoa.Title, pe.EmailAddress
+from (select * from Person.Person where FirstName in('Ken', 'Rob', 'Jossef', 'Gigi')) pessoa
+join Person.EmailAddress pe on pessoa.BusinessEntityID = pe.BusinessEntityID
 
 
 
