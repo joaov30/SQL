@@ -168,6 +168,6 @@ from Person.EmailAddress
 select pessoa.FirstName, pessoa.Title, pe.EmailAddress
 from (select * from Person.Person where FirstName in('Ken', 'Rob', 'Jossef', 'Gigi')) pessoa
 join Person.EmailAddress pe on pessoa.BusinessEntityID = pe.BusinessEntityID
-
-
-
+-------------------------------------------------------------
+With pessoa_funcionario as (select FirstName nome, count(FirstName) soma from Person.Person where FirstName = 'John' group by FirstName)
+select * from pessoa_funcionario;
