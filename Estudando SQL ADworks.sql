@@ -1,3 +1,4 @@
+use AdventureWorks2017
 ---------TESTES---------
 SELECT *
 FROM person.person
@@ -471,3 +472,23 @@ SELECT *
 FROM Person.Person
 where FirstName in('Ken','Jossef','Janice') and Title is not null
 order by BusinessEntityID
+
+
+select *
+from Person.Person
+
+select *
+from Person.EmailAddress
+
+select pessoa.FirstName, pessoa.Title, pe.EmailAddress
+from (select * from Person.Person where FirstName in('Ken', 'Rob', 'Jossef', 'Gigi')) pessoa
+join Person.EmailAddress pe on pessoa.BusinessEntityID = pe.BusinessEntityID
+-------------------------------------------------------------
+With pessoa_funcionario as (select FirstName nome, count(FirstName) soma from Person.Person where FirstName = 'John' group by FirstName)
+select * from pessoa_funcionario;
+
+
+with [Pessoas Mr.] as (Select * from Person.Person where Title = 'Mr.'),
+[Pessoas Ms.] as (Select * from Person.Person where Title = 'Ms.')
+Select mr.FirstName from [Pessoas Mr.] mr
+
